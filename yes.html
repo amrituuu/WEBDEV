@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Byte Branding</title>
+    <link rel="stylesheet" href="Homepage.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div id="root"></div> <!-- React will render here -->
+
+    <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script type="text/javascript">
+        const e = React.createElement;
+
+        // Homepage component in plain React
+        const Homepage = () => {
+            return (
+                e('div', { className: 'homepage' },
+                    e('header', { className: 'header' },
+                        e('h1', null, 'Byte Branding'),
+                        e('nav', { className: 'nav' },
+                            e('ul', null,
+                                e('li', null, e('a', { href: '#home' }, 'Home')),
+                                e('li', null, e('a', { href: '#about' }, 'About Us')),
+                                e('li', null, e('a', { href: '#services' }, 'Services')),
+                                e('li', null, e('a', { href: '#portfolio' }, 'Portfolio')),
+                                e('li', null, e('a', { href: '#blog' }, 'Blog')),
+                                e('li', null, e('a', { href: '#contact' }, 'Contact Us'))
+                            )
+                        )
+                    ),
+                    e('section', { className: 'hero', id: 'home' },
+                        e('div', { className: 'hero-content' },
+                            e('h2', null, 'Welcome to Byte Branding'),
+                            e('p', null, 'Your Partner in Digital Success')
+                        )
+                    ),
+                    e('footer', { className: 'footer' },
+                        e('p', null, '© 2024 Byte Branding. All rights reserved.')
+                    )
+                )
+            );
+        };
+
+        // Render the Homepage component to the root div
+        ReactDOM.render(e(Homepage), document.getElementById('root'));
+    </script>
+</body>
+</html>
